@@ -1,0 +1,7 @@
+[Unit]
+Description=watchtower-guard integrity check (agent guardrail watcher)
+# Run this as YOUR user (or a dedicated watcher user), never as the agent.
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/watchtower-guard check --store /var/lib/watchtower --key-file %h/.config/watchtower/key --webhook https://your-alert-endpoint/hook
