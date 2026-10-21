@@ -1,0 +1,3 @@
+# Run the check every 5 minutes as a user the agent cannot impersonate.
+# Keep the store and key on paths the agent cannot write.
+*/5 * * * * /usr/local/bin/watchtower-guard check --store /var/lib/watchtower --key-file /home/you/.config/watchtower/key --webhook https://your-alert-endpoint/hook >> /var/log/watchtower.log 2>&1
